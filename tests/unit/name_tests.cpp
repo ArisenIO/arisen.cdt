@@ -18,7 +18,7 @@ static constexpr uint64_t u64min = numeric_limits<uint64_t>::min(); // 0ULL
 static constexpr uint64_t u64max = numeric_limits<uint64_t>::max(); // 18446744073709551615ULL
 
 // Definitions in `arisen.cdt/libraries/arisen/name.hpp`
-ARISEN_TEST_BEGIN(name_type_test)
+EOSIO_TEST_BEGIN(name_type_test)
    //// constexpr name()
    CHECK_EQUAL( name{}.value, 0ULL )
 
@@ -96,29 +96,29 @@ ARISEN_TEST_BEGIN(name_type_test)
    // -------------------------------
    // constexpr uint8_t length()cosnt
    CHECK_EQUAL( name{""}.length(), 0 )
-   CHECK_EQUAL( name{"a"}.length(), 1 )
-   CHECK_EQUAL( name{"ar"}.length(), 2 )
-   CHECK_EQUAL( name{"ari"}.length(), 3 )
-   CHECK_EQUAL( name{"aris"}.length(), 4 )
-   CHECK_EQUAL( name{"arise"}.length(), 5 )
-   CHECK_EQUAL( name{"arisen"}.length(), 6 )
-   CHECK_EQUAL( name{"arisena"}.length(), 7 )
-   CHECK_EQUAL( name{"arisenac"}.length(), 8 )
-   CHECK_EQUAL( name{"arisenacc"}.length(), 9 )
-   CHECK_EQUAL( name{"arisenacco"}.length(), 10 )
-   CHECK_EQUAL( name{"arisenaccou"}.length(), 11 )
-   CHECK_EQUAL( name{"arisenaccoun"}.length(), 12 )
-   CHECK_EQUAL( name{"arisenaccount"}.length(), 13 )
+   CHECK_EQUAL( name{"e"}.length(), 1 )
+   CHECK_EQUAL( name{"eo"}.length(), 2 )
+   CHECK_EQUAL( name{"eos"}.length(), 3 )
+   CHECK_EQUAL( name{"eosi"}.length(), 4 )
+   CHECK_EQUAL( name{"arisen"}.length(), 5 )
+   CHECK_EQUAL( name{"arisena"}.length(), 6 )
+   CHECK_EQUAL( name{"arisenac"}.length(), 7 )
+   CHECK_EQUAL( name{"arisenacc"}.length(), 8 )
+   CHECK_EQUAL( name{"arisenacco"}.length(), 9 )
+   CHECK_EQUAL( name{"arisenaccou"}.length(), 10 )
+   CHECK_EQUAL( name{"arisenaccoun"}.length(), 11 )
+   CHECK_EQUAL( name{"arisenaccount"}.length(), 12 )
+   CHECK_EQUAL( name{"arisenaccountj"}.length(), 13 )
 
    CHECK_ASSERT( "string is too long to be a valid name", ([]() {name{"12345abcdefghj"}.length();}) )
 
    // ----------------------------
    // constexpr name suffix()const
    CHECK_EQUAL( name{".arisenaccounj"}.suffix(), name{"arisenaccounj"} )
-   CHECK_EQUAL( name{"a.risenaccounj"}.suffix(), name{"osioaccounj"} )
-   CHECK_EQUAL( name{"ar.isenaccounj"}.suffix(), name{"sioaccounj"} )
-   CHECK_EQUAL( name{"ari.senaccounj"}.suffix(), name{"ioaccounj"} )
-   CHECK_EQUAL( name{"aris.enaccounj"}.suffix(), name{"oaccounj"} )
+   CHECK_EQUAL( name{"e.osioaccounj"}.suffix(), name{"osioaccounj"} )
+   CHECK_EQUAL( name{"eo.sioaccounj"}.suffix(), name{"sioaccounj"} )
+   CHECK_EQUAL( name{"eos.ioaccounj"}.suffix(), name{"ioaccounj"} )
+   CHECK_EQUAL( name{"eosi.oaccounj"}.suffix(), name{"oaccounj"} )
    CHECK_EQUAL( name{"arisen.accounj"}.suffix(), name{"accounj"} )
    CHECK_EQUAL( name{"arisena.ccounj"}.suffix(), name{"ccounj"} )
    CHECK_EQUAL( name{"arisenac.counj"}.suffix(), name{"counj"} )
@@ -127,8 +127,8 @@ ARISEN_TEST_BEGIN(name_type_test)
    CHECK_EQUAL( name{"arisenaccou.nj"}.suffix(), name{"nj"} )
    CHECK_EQUAL( name{"arisenaccoun.j"}.suffix(), name{"j"} )
 
-   CHECK_EQUAL( name{"a.r.i.s.e.n.a.c"}.suffix(), name{"c"} )
-   CHECK_EQUAL( name{"ari.sena.cco"}.suffix(), name{"cco"} )
+   CHECK_EQUAL( name{"e.o.s.i.o.a.c"}.suffix(), name{"c"} )
+   CHECK_EQUAL( name{"eos.ioa.cco"}.suffix(), name{"cco"} )
 
    // -----------------------------
    // constexpr operator raw()const
@@ -366,7 +366,7 @@ ARISEN_TEST_BEGIN(name_type_test)
    CHECK_EQUAL( name{"555555555555j"}, "555555555555j"_n )
    CHECK_EQUAL( name{"aaaaaaaaaaaaj"}, "aaaaaaaaaaaaj"_n )
    CHECK_EQUAL( name{"zzzzzzzzzzzzj"}, "zzzzzzzzzzzzj"_n )
-ARISEN_TEST_END
+EOSIO_TEST_END
 
 int main(int argc, char* argv[]) {
    bool verbose = false;
@@ -375,6 +375,6 @@ int main(int argc, char* argv[]) {
    }
    silence_output(!verbose);
 
-   ARISEN_TEST(name_type_test);
+   EOSIO_TEST(name_type_test);
    return has_failed();
 }
