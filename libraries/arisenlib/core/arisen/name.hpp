@@ -77,7 +77,7 @@ namespace arisen {
       :value(0)
       {
          if( str.size() > 13 ) {
-            arisen::check( false, "string is too long to be a valid name" );
+            rsn::check( false, "string is too long to be a valid name" );
          }
          if( str.empty() ) {
             return;

@@ -361,8 +361,8 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
    static constexpr symbol sym_no_prec{"SYMBOLL",0};
    static constexpr symbol sym_prec{"SYMBOLL",63};
 
-   static constexpr extended_symbol ext_sym_no_prec{sym_no_prec, name{"arisenaccountj"}};
-   static constexpr extended_symbol ext_sym_prec{sym_prec, name{"arisenaccountj"}};
+   static constexpr extended_symbol ext_sym_no_prec{sym_no_prec, name{"eosioaccountj"}};
+   static constexpr extended_symbol ext_sym_prec{sym_prec, name{"eosioaccountj"}};
 
    static const asset asset_no_prec{0LL, sym_no_prec};
    static const asset asset_prec{0LL, sym_prec};
@@ -373,11 +373,11 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
 
    //// extended_asset(int64_t, extended_symbol)
    CHECK_EQUAL( (extended_asset{{},ext_sym_no_prec}.quantity), (asset{0LL, sym_no_prec}) )
-   CHECK_EQUAL( (extended_asset{{},ext_sym_no_prec}.contract), (name{"arisenaccountj"}) )
+   CHECK_EQUAL( (extended_asset{{},ext_sym_no_prec}.contract), (name{"eosioaccountj"}) )
 
    //// extended_asset(asset, name)
-   CHECK_EQUAL( (extended_asset{asset_no_prec, name{"arisenaccountj"}}.quantity), (asset{ 0LL, sym_no_prec}) )
-   CHECK_EQUAL( (extended_asset{asset_no_prec, name{"arisenaccountj"}}.contract), (name{"arisenaccountj"}) )
+   CHECK_EQUAL( (extended_asset{asset_no_prec, name{"eosioaccountj"}}.quantity), (asset{ 0LL, sym_no_prec}) )
+   CHECK_EQUAL( (extended_asset{asset_no_prec, name{"eosioaccountj"}}.contract), (name{"eosioaccountj"}) )
 
    // ------------------------------------------
    // extended_symbol get_extended_symbol()const
@@ -448,7 +448,7 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
 
    CHECK_ASSERT( "type mismatch", (
       [&]() {
-         extended_asset{asset_no_prec, name{"arisenaccountj"}} + extended_asset{asset_no_prec, name{"jtnuoccaoisoe"}};
+         extended_asset{asset_no_prec, name{"eosioaccountj"}} + extended_asset{asset_no_prec, name{"jtnuoccaoisoe"}};
       })
    )
 
@@ -461,7 +461,7 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
 
    CHECK_ASSERT( "type mismatch", (
       [&]() {
-         temp += extended_asset{asset_no_prec, name{"arisenaccountj"}};
+         temp += extended_asset{asset_no_prec, name{"eosioaccountj"}};
       })
    )
 
@@ -474,7 +474,7 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
 
    CHECK_ASSERT( "type mismatch", (
       [&]() {
-         extended_asset{asset_no_prec, name{"arisenaccountj"}} - extended_asset{asset_no_prec, name{"jtnuoccaoisoe"}};
+         extended_asset{asset_no_prec, name{"eosioaccountj"}} - extended_asset{asset_no_prec, name{"jtnuoccaoisoe"}};
       })
    )
 
@@ -498,16 +498,16 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
 
    // --------------------------------------------------------------------
    // friend bool operator!=(const extended_asset&, const extended_asset&)
-   CHECK_EQUAL( (extended_asset{asset_no_prec, name{"arisenaccountj"}} != extended_asset{asset_no_prec, name{"jtnuoccaoisoe"}}), true )
+   CHECK_EQUAL( (extended_asset{asset_no_prec, name{"eosioaccountj"}} != extended_asset{asset_no_prec, name{"jtnuoccaoisoe"}}), true )
    CHECK_EQUAL( (extended_asset{asset{1LL, sym_no_prec}, {}} != extended_asset{asset{-1LL, sym_no_prec}, {}}), true )
-   CHECK_EQUAL( (extended_asset{asset{1LL, sym_no_prec}, {}} != extended_asset{asset{ 0LL, sym_no_prec}, name{"arisenaccountj"}}), true )
+   CHECK_EQUAL( (extended_asset{asset{1LL, sym_no_prec}, {}} != extended_asset{asset{ 0LL, sym_no_prec}, name{"eosioaccountj"}}), true )
 
    // -------------------------------------------------------------------
    // friend bool operator<(const extended_asset&, const extended_asset&)
    CHECK_EQUAL( (extended_asset{asset_no_prec, name{}} < extended_asset{asset{ 1LL, sym_no_prec}, {}}), true )
    CHECK_ASSERT( "type mismatch", (
       [&]() {
-         bool b{extended_asset{{}, name{}} < extended_asset{{}, name{"arisenaccountj"}}};
+         bool b{extended_asset{{}, name{}} < extended_asset{{}, name{"eosioaccountj"}}};
          return b;
       })
    )
@@ -517,7 +517,7 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
    CHECK_EQUAL( (extended_asset{asset_no_prec, name{}} <= extended_asset{asset{ 1LL, sym_no_prec}, {}}), true );
    CHECK_ASSERT( "type mismatch", (
       [&]() {
-         bool b{extended_asset{{}, name{}} <= extended_asset{{}, name{"arisenaccountj"}}};
+         bool b{extended_asset{{}, name{}} <= extended_asset{{}, name{"eosioaccountj"}}};
          return b;
       })
    )
@@ -527,7 +527,7 @@ ARISEN_TEST_BEGIN(extended_asset_type_test)
    CHECK_EQUAL( (extended_asset{asset{ 1LL, sym_no_prec}, {}} >= extended_asset{asset_no_prec, name{}}), true );
    CHECK_ASSERT( "type mismatch", (
       [&]() {
-         bool b{extended_asset{{}, name{}} >= extended_asset{{}, name{"arisenaccountj"}}};
+         bool b{extended_asset{{}, name{}} >= extended_asset{{}, name{"eosioaccountj"}}};
          return b;
       })
    )
