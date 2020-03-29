@@ -18,7 +18,7 @@ static constexpr uint64_t u64min = numeric_limits<uint64_t>::min(); // 0ULL
 static constexpr uint64_t u64max = numeric_limits<uint64_t>::max(); // 18446744073709551615ULL
 
 // Definitions in `arisen.cdt/libraries/arisen/name.hpp`
-EOSIO_TEST_BEGIN(name_type_test)
+ARISEN_TEST_BEGIN(name_type_test)
    //// constexpr name()
    CHECK_EQUAL( name{}.value, 0ULL )
 
@@ -366,7 +366,7 @@ EOSIO_TEST_BEGIN(name_type_test)
    CHECK_EQUAL( name{"555555555555j"}, "555555555555j"_n )
    CHECK_EQUAL( name{"aaaaaaaaaaaaj"}, "aaaaaaaaaaaaj"_n )
    CHECK_EQUAL( name{"zzzzzzzzzzzzj"}, "zzzzzzzzzzzzj"_n )
-EOSIO_TEST_END
+ARISEN_TEST_END
 
 int main(int argc, char* argv[]) {
    bool verbose = false;
@@ -375,6 +375,6 @@ int main(int argc, char* argv[]) {
    }
    silence_output(!verbose);
 
-   EOSIO_TEST(name_type_test);
+   ARISEN_TEST(name_type_test);
    return has_failed();
 }
