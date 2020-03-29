@@ -77,7 +77,7 @@ namespace arisen {
       :value(0)
       {
          if( str.size() > 13 ) {
-            arise::check( false, "string is too long to be a valid name" );
+            arisen::check( false, "string is too long to be a valid name" );
          }
          if( str.empty() ) {
             return;
@@ -92,7 +92,7 @@ namespace arisen {
          if( str.size() == 13 ) {
             uint64_t v = char_to_value( str[12] );
             if( v > 0x0Full ) {
-               arise::check(false, "thirteenth character in name cannot be a letter that comes after j");
+               arisen::check(false, "thirteenth character in name cannot be a letter that comes after j");
             }
             value |= v;
          }
@@ -112,7 +112,7 @@ namespace arisen {
          else if( c >= 'a' && c <= 'z' )
             return (c - 'a') + 6;
          else
-            arise::check( false, "character is not in allowed character set for names" );
+            arisen::check( false, "character is not in allowed character set for names" );
 
          return 0; // control flow will never reach here; just added to suppress warning
       }
@@ -290,8 +290,8 @@ namespace arisen {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu-string-literal-operator-template"
 template <typename T, T... Str>
-inline constexpr arise::name operator""_n() {
-   constexpr auto x = arise::name{std::string_view{arise::detail::to_const_char_arr<Str...>::value, sizeof...(Str)}};
+inline constexpr arisen::name operator""_n() {
+   constexpr auto x = arisen::name{std::string_view{arisen::detail::to_const_char_arr<Str...>::value, sizeof...(Str)}};
    return x;
 }
 #pragma clang diagnostic pop
