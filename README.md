@@ -1,5 +1,5 @@
 # ARISEN.CDT (Contract Development Toolkit)
-## Version : 1.6.3
+## Version : 1.0.0
 
 ARISEN.CDT is a toolchain for WebAssembly (WASM) and set of tools to facilitate contract writing for the ARISEN platform.  In addition to being a general purpose WebAssembly toolchain, [ARISEN](https://github.com/arisenio/arisen) specific optimizations are available to support building ARISEN smart contracts.  This new toolchain is built around [Clang 7](https://github.com/arisenio/llvm), which means that ARISEN.CDT has the most currently available optimizations and analyses from LLVM, but as the WASM target is still considered experimental, some optimizations are not available or incomplete.
 
