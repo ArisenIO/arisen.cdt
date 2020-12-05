@@ -24,8 +24,8 @@ $ brew remove arisen.cdt
 
 #### Debian Package Install
 ```sh
-$ wget https://github.com/arisenio/arisen.cdt/releases/download/v1.6.3/arisen.cdt_1.6.3-1-ubuntu-18.04_amd64.deb
-$ sudo apt install ./arisen.cdt_1.6.3-1-ubuntu-18.04_amd64.deb
+$ wget https://github.com/ArisenIO/arisen.cdt/releases/download/1.0/arisen-cdt-ubuntu18_4-2_all.deb
+$ sudo apt install ./arisen-cdt-ubuntu18_4-2_all.deb
 ```
 
 #### Debian Package Uninstall
