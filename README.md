@@ -35,8 +35,8 @@ $ sudo apt remove arisen.cdt
 
 #### RPM Package Install
 ```sh
-$ wget https://github.com/arisenio/arisen.cdt/releases/download/v1.6.3/arisen.cdt-1.6.3-1.el7.x86_64.rpm
-$ sudo yum install ./arisen.cdt-1.6.3-1.el7.x86_64.rpm
+$ wget https://github.com/ArisenIO/arisen.cdt/releases/download/1.0/arisen-1.0-3.noarch.rpm
+$ sudo yum install ./arisen-1.0-3.noarch.rpm
 ```
 
 #### RPM Package Uninstall
