@@ -1,3 +1,5 @@
+Arisen.cdt readme
+
 # ARISEN.CDT (Contract Development Toolkit)
 ## Version : 1.0.0
 
@@ -20,28 +22,6 @@ $ brew install arisen.cdt
 #### Mac OS X Brew Uninstall
 ```sh
 $ brew remove arisen.cdt
-```
-
-#### Debian Package Install
-```sh
-$ wget https://github.com/ArisenIO/arisen.cdt/releases/download/1.0/arisen-cdt-ubuntu18_4-2_all.deb
-$ sudo apt install ./arisen-cdt-ubuntu18_4-2_all.deb
-```
-
-#### Debian Package Uninstall
-```sh
-$ sudo apt remove arisen.cdt
-```
-
-#### RPM Package Install
-```sh
-$ wget https://github.com/ArisenIO/arisen.cdt/releases/download/1.0/arisen-1.0-3.noarch.rpm
-$ sudo yum install ./arisen-1.0-3.noarch.rpm
-```
-
-#### RPM Package Uninstall
-```sh
-$ sudo yum remove arisen.cdt
 ```
 
 ### Guided Installation (Building from Scratch)
